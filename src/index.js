@@ -9,8 +9,9 @@ import {
   useNavigate,
   useLocation
 } from "react-router-dom";
-import MvApp from './components/homepage/Movies-App';
+import {MvApp} from './components/homepage/Movies-App';
 import './index.css';
+import { Shows } from './components/homepage/parts';
 
 
 function App(){
@@ -18,6 +19,7 @@ function App(){
     <Router>
       <Routes>
         <Route path="/" element={<MvApp></MvApp>}></Route>
+        <Route path="/shows" element={<Shows></Shows>}></Route>
       </Routes>
     </Router>
   );

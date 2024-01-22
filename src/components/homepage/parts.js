@@ -1,31 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import cinemas from "./venue";
-import { useState } from "react";
+import {cinemas} from "./Movies-App";
+import { useState, createContext } from "react";
 
-
+const bookContext = createContext();
 
 function Movie(props,index){
-    const[show,setShow] = useState(0);
     const[movie,setMovie] = useState(0);
-    const setMov = () =>{
-      setShow(!show);
-      show?setMovie(props.text):setMovie(0)
-    }
+    // const setMov = () =>{
+    //   setShow(!show);
+    //   show?setMovie(props.text):setMovie(0)
+    // }
     return(
+      <bookContext.Provider>
       <div className="mv-card">
           <dt>
           <img className="movie-img" src={props.link} alt={props.text}/>
-          <button onClick={()=>{ setMov() }} >
+          <Link to='/shows'>
+          <button onClick={()=>{ setMovie(props.text) }} >
               <h2 className="movie-name">{props.text}</h2>
-              {show?<Shows/>:null}
+              {/* {show?<Shows/>:null} */}
           </button>
+          </Link>
           </dt>
           <dd>
           <p className="movie-sub">{props.sub} • {props.type}</p>
           </dd>
       </div>
+      </bookContext.Provider>
     );
 }
 
@@ -94,9 +97,9 @@ function Card(props){
 
 
 function createCard(cine) {
-    return (
+  return (
       <Card
-        key={cine.id}
+        // key={cine.id}
         name={cine.name}
         imgURL={cine.imgURL}
         t1={cine.timings[0]}
@@ -108,7 +111,7 @@ function createCard(cine) {
         f1={cine.format[0]}
         f2={cine.format[1]}
         f3={cine.format[2]}
-        f4={cine.format[3]}
+        // f4={cine.format[3]}
         movie={movie}
       />
     );
@@ -125,5 +128,5 @@ function Shows(){
 
 export default Movie;
 export {
-  Shows
+  Shows,
 };
