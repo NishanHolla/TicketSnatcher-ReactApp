@@ -4,14 +4,11 @@
 }
 
 #ml {
-  /*body*/
   font-family: sans-serif;
   margin: 0 auto;
-  padding: 25px;
-
+  padding: 35px;
   min-width: 400px;
   background-color:tomato;
-  /*text-align: center;*/
 }
 
 
@@ -115,7 +112,7 @@ padding: 0 auto;
   border-radius:30px;
   border: solid black;
   text-align: center;
-  max-width: 20rem;
+  /* max-width: 20rem; */
   margin-bottom: 3rem;
   margin: 2%;
   padding: 2rem;
@@ -139,12 +136,6 @@ dt img {
   font-size: 200%;
   font-weight: 900;
 }
-
-/* .movie-img {
-  margin: 0 auto 20px;
-  display: block;
-  font-size: 400%;
-} */
 
 dd {
   font-size: 92.5%;
@@ -173,8 +164,8 @@ dd dl .mv-card  {
 .heading {
   color:white;
   margin-top:10px;
-  margin-bottom:30px;
-  margin-left: 600px;
+  /* margin-bottom:30px;
+  margin-left: 600px; */
   text-shadow: #282c34 5px 3px;
   font-style: italic;
   font-size: 3rem;
@@ -283,4 +274,10 @@ dd dl .mv-card  {
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+}
+
+.shows{
+  width: 30%;
+  padding: 10%;
+  display: flex;
 }
